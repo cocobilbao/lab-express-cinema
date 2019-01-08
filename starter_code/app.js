@@ -11,8 +11,16 @@ const logger       = require('morgan');
 const path         = require('path');
 
 
+// hbs.registerPartials(__dirname + '/views/partials');
+
+// // Middleware Setup
+// app.use(logger('dev'));
+// app.use(bodyParser.json());
+
+
+
 mongoose
-  .connect('mongodb://localhost/starter-code', {useNewUrlParser: true})
+  .connect('mongodb://localhost/express-cinema', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -25,9 +33,6 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
-app.get('/movies', (req, res, next) => {
-  res.render('movies');
-});
 
 
 // Middleware Setup

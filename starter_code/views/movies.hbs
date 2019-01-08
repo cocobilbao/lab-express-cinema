@@ -1,1 +1,12 @@
-<p>pelis</p>
+<h1>Movies</h1>
+<section>
+    {{#each movies}}
+    <div>
+        <img src="{{this.image}}" alt="">
+    </div>
+    <div>
+        <h1>{{this.title}}</h1>
+        <a href="movie/{{this._id}}">See more</a>
+    </div>
+    {{/each}}
+</section>
